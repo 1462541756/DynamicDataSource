@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: DynamicDataSource
+server:
+  port: 8088
+mybatis:
+  type-aliases-package: com.yangkai.dynamic  #别名包，配置后可不用写类的全限名
+  mapper-locations:
+    - classpath*:mapper/**/*.xml  #classpath*和classpath同时用会导致重复加载
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
